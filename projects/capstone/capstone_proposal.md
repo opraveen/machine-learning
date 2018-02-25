@@ -15,7 +15,9 @@ Personally, I've been impressed with the technology for a while, but haven't mad
 
 ### Problem Statement
 
-The objective is to predict the closing price of bitcoin and ethereum over a 7-day period using historic data of these cryptocurrencies. Given the high volatility in these markets, it is hard to arrive at useful models just based on price data [2]. In this light, I would also like to explore the possibility of including twitter sentiment over this period of time.
+The objective is to predict the closing price of bitcoin and ethereum over a 7-day period using historic data of these cryptocurrencies. This is a regression problem, as the goal is to predict the closing price.
+
+Given the high volatility in these markets, it is hard to arrive at useful models just based on price data [2]. In this light, I would also like to explore the possibility of including twitter/reddit sentiment over this period of time.
 
 ### Datasets and Inputs
 
@@ -23,9 +25,11 @@ The historic price data of cryptocurrencies (along with other alt-coins) is avai
  
 I couldn't find freely accessible twitter data on cryptocurrencies. I plan to use twitter API to access relevant bitcoin/ethereum tweets and perform sentiment analysis using NLTK package. One of the goals of this project is to understand if there is a correlation between tweets and cryptocurrency prices.
 
+If I cannot easily obtain twitter data for at least a six-month time window, I plan to look into Reddit (r/CryptoCurrency) perform sentiment analysis on headlines.
+
 ### Solution Statement
 
-I'd begin with applying linear regression (using sklearn) on the available data. As this data has temporal information (time series), recurrent neural networks would naturally apply. I plan to train a Long-Short Term Memory (LSTM) using Keras package with Tensorflow backend.
+I'd begin with applying linear regression (using scikit-learn) on the available data. As this data has temporal information (time series), recurrent neural networks would naturally apply. I plan to train a Long-Short Term Memory (LSTM) using Keras package with Tensorflow backend. I plan to vary the window size in this range (3-day, 7-day, 15-day, 30-day)
 
 ### Benchmark Model
 
