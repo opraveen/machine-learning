@@ -33,7 +33,7 @@ I'd begin with applying linear regression (using scikit-learn) on the available 
 
 ### Benchmark Model
 
-The benchmark model for this project is a simple model relying ony on last day's price available. The predicted price is going to be the last available price point. 
+The benchmark model for this project is a simple model relying ony on last day's price available. The predicted price is going to be the last available price point (persistence model)
 
 
 ### Evaluation Metrics
@@ -54,27 +54,36 @@ Review if any data is missing and either impute the data or ignore such records,
 
 #### Feature engineering
 
-Translate tweets into sentiments - either as binary (positive or negative) or as a grade on a scale of 1-5 (5 being very positive). This would be a new engineered feature.
+Translate tweets into sentiments using Vader algorithm (from NLTK package's SentimentIntensityAnalyzer). The mean of 'compound' for all tweets in a day would be used a feature. This feature's value would be in the range \[-1, +1\], where -1 and +1 represent the most negative and the most positive sentiments respectively.
 
-Select relevant features and drop any, if no correlation is observed.
+from nltk.sentiment.vader import SentimentIntensityAnalyzer as SIA
 
-#### Feature normalization & PCA
+I'd include other engineered features such as percent change in price per day; volatility etc. Select relevant features and drop any, if no correlation is observed.
 
-Normalize the features to have zero mean and unit variance and apply PCA to create orthogonal features. If appropriate, consider only the top features henceforth. Since the number of features is not large, this may not be necessary.
+#### Feature normalization
+
+Normalize the features to have zero mean and unit variance. 
+
+Since the number of features is not going to be large, PCA is unnecessary.
 
 #### Train-test split
-Split dataset into train and test sets into 80-20 ratio. Since this is a time series, the latest 20% of data will be treated as test set (No randomization)
+Split dataset into train and test sets into 80-20 ratio. Since this is a time series, the latest 20% of data will be treated as test set (No randomization).
 
 #### Model exploration
 
 Split training set into train and validation sets and learn these models:
 
-1. Linear Regression (baseline)
-2. LSTM
+1. Persistence model (baseline)
+2. Linear Regression
+3. LSTM
+
+For LSTM, I'd vary the window size from \[5, 20] and treat this as a hyperparameter
 
 #### Model optimization and evaluation
 
 Evaluate the models on validation set(s). Regularize or fine tune hyper-parameters to find a good bias-variance balance. Exploring the hyper-parameter space could be done using GridSearch in scikit, need to find relevant methods for LSTM.
+
+For cross-validation, I'd use TimeSeriesSplit() feature with GridSearch, where successive training sets would be supersets of the previous ones.
 
 #### Publish results with appropriate visualization
 
