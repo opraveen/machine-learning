@@ -25,7 +25,7 @@ The historic price data of cryptocurrencies (along with other alt-coins) is avai
  
 I couldn't find freely accessible twitter data on cryptocurrencies. I plan to use twitter API to access relevant bitcoin/ethereum tweets and perform sentiment analysis using NLTK package. One of the goals of this project is to understand if there is a correlation between tweets and cryptocurrency prices.
 
-If I cannot easily obtain twitter data for at least a six-month time window, I plan to look into Reddit (r/CryptoCurrency) perform sentiment analysis on headlines.
+If I cannot easily obtain twitter data for at least a six-month time window, I plan to look into Reddit (r/CryptoCurrency, r/ethtrader, r/BitcoinMarkets) and perform sentiment analysis on headlines.
 
 ### Solution Statement
 
