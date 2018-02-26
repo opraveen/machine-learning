@@ -21,7 +21,7 @@ Given the high volatility in these markets, it is hard to arrive at useful model
 
 ### Datasets and Inputs
 
-The historic price data of cryptocurrencies (along with other alt-coins) is available on coinmarketcap.com [3]. For each day from 2009-2017, I plan to retrieve the data from [3] for bitcoin and ethereum that includes open/close/low/high/ prices, volume and market cap.
+The historic price data of cryptocurrencies (along with other alt-coins) is available on coinmarketcap.com [3]. For each day from Aug 07 2015 to Feb 26 2018, I plan to retrieve the data from [3] for bitcoin and ethereum that includes open/close/low/high/ prices, volume and market cap. This would be 934 rows of data for bitcoin and ethereum .
  
 I couldn't find freely accessible twitter data on cryptocurrencies. I plan to use twitter API to access relevant bitcoin/ethereum tweets and perform sentiment analysis using NLTK package. One of the goals of this project is to understand if there is a correlation between tweets and cryptocurrency prices.
 
