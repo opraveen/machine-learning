@@ -62,9 +62,7 @@ I'd include other engineered features such as percent change in price per day; v
 
 #### Feature normalization
 
-Normalize the features to have zero mean and unit variance. 
-
-Since the number of features is not going to be large, PCA is unnecessary.
+Normalize the features to have zero mean and unit variance. Since the number of features is small, PCA is unnecessary.
 
 #### Train-test split
 Split dataset into train and test sets into 80-20 ratio. Since this is a time series, the latest 20% of data will be treated as test set (No randomization).
@@ -76,8 +74,6 @@ Split training set into train and validation sets and learn these models:
 1. Persistence model (baseline)
 2. Linear Regression
 3. LSTM
-
-For LSTM, I'd vary the window size from \[5, 20] and treat this as a hyperparameter
 
 #### Model optimization and evaluation
 
