@@ -29,7 +29,7 @@ If I cannot easily obtain twitter data for at least a six-month time window, I p
 
 ### Solution Statement
 
-I'd begin with applying linear regression (using scikit-learn) on the available data. As this data has temporal information (time series), recurrent neural networks would naturally apply. I plan to train a Long-Short Term Memory (LSTM) using Keras package with Tensorflow backend. I plan to vary the window size in this range (3-day, 7-day, 15-day, 30-day)
+I'd begin with applying linear regression (using scikit-learn) on the available data. As this data has temporal information (time series), recurrent neural networks would naturally apply. I plan to train a Long-Short Term Memory (LSTM) using Keras package with Tensorflow backend. I plan to vary the window size in this range [4-days, 20-days]
 
 ### Benchmark Model
 
