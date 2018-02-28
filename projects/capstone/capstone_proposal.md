@@ -35,7 +35,6 @@ I'd begin with applying linear regression (using scikit-learn) on the available 
 
 The benchmark model for this project is a simple model relying ony on last day's price available. The predicted price is going to be the last available price point (persistence model)
 
-
 ### Evaluation Metrics
 
 R^2 metric, Mean Squared Error (MSE) and Mean Absolute Error (MAE) are potential metrics for this problem. Since this is framed as a regression problem and the target is continuous, MSE is a sensible evaluation metrics.
@@ -54,7 +53,7 @@ Review if any data is missing and either impute the data or ignore such records,
 
 #### Feature engineering
 
-Translate tweets into sentiments using Vader algorithm (from NLTK package's SentimentIntensityAnalyzer). The mean of 'compound' for all tweets in a day would be used a feature. This feature's value would be in the range \[-1, +1\], where -1 and +1 represent the most negative and the most positive sentiments respectively.
+Translate tweets into sentiments using Vader algorithm (from NLTK package's SentimentIntensityAnalyzer). The mean 'compound' for all tweets in a day would be used as a feature. This feature's value would be in the range \[-1, +1\], where -1 and +1 represent the most negative and the most positive sentiments respectively.
 
 from nltk.sentiment.vader import SentimentIntensityAnalyzer as SIA
 
