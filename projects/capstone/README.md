@@ -1,13 +1,20 @@
 # Machine Learning Engineer Nanodegree
 ## Specializations
-## Project: Capstone Proposal and Capstone Project
+## Project: Cryptocurrency Price Indicator
 
-**Note**
+Predict daily returns and daily volatility of bitcoin and ethereum, based on historical market and google trends data.
 
-The Capstone is a two-staged project. The first is the proposal component, where you can receive valuable feedback about your project idea, design, and proposed solution. This must be completed prior to your implementation and submitting for the capstone project. 
+Implemented in python3. Uses the following packages:
+- Keras with tensorflow backend (for LSTM models)
+- scikit-learn for TimeSeriesSplit and GridSearchCV
+- pandas for data structures (DataFrames and Series)
+- numpu for numerical analysis
+- matplotlib and seaborn for visualization
+- pytrends for fetching Google trends data
+- datetime for date manipulations
 
-You can find the [capstone proposal rubric here](https://review.udacity.com/#!/rubrics/410/view), and the [capstone project rubric here](https://review.udacity.com/#!/rubrics/108/view). Please ensure that you are following directions correctly when submitting these two stages which encapsulate your capstone.
+Three ipython notebooks are of relevance for this project:
+- Data Preparation, EDA & Feat Eng: Covers the Data preparation, exploration and feature engineering
+- Normalization, Benchmarks and training: Covers the benchmarks, LSTM-based training and results. This is to be run after the first notebook
+- Cryptos_PsychSignal_Stockwits: Notebook developed in Quantopian platform to retrieve stocktwits sentiment data. Unused for this project, but uploaded here for future reference
 
-You will find an `open_projects` folder in these files. This will be where pre-curated capstone projects are available, should you choose to work on a project already partially designed for you. 
-
-Please email [machine-support@udacity.com](mailto:machine-support@udacity.com) if you have any questions.
