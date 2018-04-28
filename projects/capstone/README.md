@@ -1,6 +1,8 @@
 # Machine Learning Engineer Nanodegree
-## Specializations
 ## Project: Cryptocurrency Price Indicator
+
+Proposal: proposal.pdf
+Report: report.pdf
 
 Predict daily returns and daily volatility of bitcoin and ethereum, based on historical market and google trends data.
 
